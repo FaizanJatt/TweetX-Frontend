@@ -96,7 +96,7 @@ function Form({ type, setType }: FormProps) {
             onChange={formChangeHandler}
             value={inputForm.name}
             name="name"
-            className="w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
+            className="max-w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
           ></input>
         )}
         <input
@@ -104,7 +104,7 @@ function Form({ type, setType }: FormProps) {
           name="email"
           onChange={formChangeHandler}
           value={inputForm.email}
-          className={`w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg  ${
+          className={`max-w-96 min-w-80 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg  ${
             emailError ? " border-red-500 border" : "border-none"
           }`}
         ></input>
@@ -113,7 +113,7 @@ function Form({ type, setType }: FormProps) {
           name="password"
           value={inputForm.password}
           onChange={formChangeHandler}
-          className="w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
+          className="max-w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
         ></input>
         {type === "Register" && (
           <input
@@ -121,10 +121,10 @@ function Form({ type, setType }: FormProps) {
             name="confirmPassword"
             value={inputForm.confirmPassword}
             onChange={formChangeHandler}
-            className="w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
+            className="max-w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
           ></input>
         )}
-        <div className="flex gap-12 w-96 justify-between">
+        <div className="flex gap-12 max-w-96 justify-between">
           <button className="text-gray-500 font-semibold">
             {type === "Login" ? "Forgot Password ? " : ""}
           </button>
