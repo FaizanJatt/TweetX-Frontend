@@ -17,7 +17,6 @@ export default function FollowerItem({
   toggleFollow,
   isFollowed,
 }: FollowerItemProps) {
-  console.log(follower, isFollowed);
   return (
     <div className="flex justify-between items-center p-4 border-b border-gray-200">
       <div className="flex items-center">
@@ -33,8 +32,10 @@ export default function FollowerItem({
           )}
         </div>
         <div className="ml-4">
-          <div className="text-gray-900 font-semibold">{follower.name}</div>
-          <div className="text-gray-500 text-sm">
+          <div className="text-gray-500 font-semibold text-lg">
+            {follower.name}
+          </div>
+          <div className="text-gray-400 text-[12px]">
             Following: {follower.followingCount}
           </div>
         </div>

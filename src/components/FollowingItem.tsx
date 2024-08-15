@@ -30,17 +30,17 @@ export default function FollowingItem({
           )}
         </div>
         <div className="ml-4">
-          <div className="text-gray-900 font-semibold">
+          <div className="text-gray-500 font-semibold text-lg">
             {followingUser.name}
           </div>
-          <div className="text-gray-500 text-sm">
+          <div className="text-gray-400 text-[12px]">
             Following: {followingUser.followingCount}
           </div>
         </div>
       </div>
       <button
         onClick={() => toggleFollow(followingUser._id)}
-        className="text-gray-500 font-semibold"
+        className="text-gray-400 font-semibold"
       >
         Following
       </button>

@@ -15,7 +15,7 @@ interface ProfileHeaderProps {
 
 function Following({ followingList, toggleFollow }: ProfileHeaderProps) {
   return (
-    <div className="max-w-md mx-auto mt-10">
+    <div className="max-w-md mx-auto mt-10 flex flex-col gap-y-4">
       {followingList.map((followingUser) => (
         <FollowingItem
           toggleFollow={toggleFollow}

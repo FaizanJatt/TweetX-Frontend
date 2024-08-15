@@ -20,10 +20,8 @@ function Followers({
   followingList,
   toggleFollow,
 }: ProfileHeaderProps) {
-  console.log("following", followingList);
-  console.log("follower", followersList);
   return (
-    <div className="max-w-md mx-auto mt-10">
+    <div className="max-w-md mx-auto mt-10  flex flex-col gap-y-4">
       {followersList.map((follower) => (
         <FollowerItem
           isFollowed={followingList.map((e) => e._id).includes(follower._id)}

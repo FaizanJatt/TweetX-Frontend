@@ -26,8 +26,8 @@ export default function ProfileHeader({ user }: ProfileHeaderProps) {
         )}
       </div>
       <div className="ml-8">
-        <div className="text-2xl font-semibold text-gray-900">{user?.name}</div>
-        <div className="flex space-x-4 mt-2 text-gray-500">
+        <div className="text-2xl font-semibold text-gray-500">{user?.name}</div>
+        <div className="flex space-x-4 mt-2 text-gray-300">
           <span>Posts: {user?.postsCount}</span>
           <span>Followers: {user?.followersCount}</span>
           <span>Following: {user?.followingCount}</span>

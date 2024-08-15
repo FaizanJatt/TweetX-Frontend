@@ -52,7 +52,7 @@ export const loginUser = async (userData: UserData) => {
 export const getAllUsers = async (): Promise<UserType[]> => {
   try {
     const response = await axios.get<UserType[]>(`${API_URL}/users`);
-    console.log(response);
+
     return response.data;
   } catch (error: any) {
     const axiosError = error as AxiosError;
@@ -71,7 +71,7 @@ export const getAllUsersStatus = async (
     const response = await axios.get(
       `${API_URL}/userStatus?q=${currentUserId}`
     );
-    console.log(response);
+
     return response.data;
   } catch (error: any) {
     const axiosError = error as AxiosError;
@@ -88,7 +88,7 @@ export const getUserFollowingData = async (
 ): Promise<any> => {
   try {
     const response = await axios.get(`${API_URL}/user/${currentUserId}`);
-    console.log(response);
+
     return response.data;
   } catch (error: any) {
     const axiosError = error as AxiosError;
@@ -105,11 +105,10 @@ export const followUser = async (
   toFollowUserId: string
 ): Promise<any> => {
   try {
-    console.log(userId, toFollowUserId);
     const response = await axios.post(`${API_URL}/follow/${toFollowUserId}`, {
       userId,
     });
-    console.log(response);
+
     return response.data;
   } catch (error: any) {
     const axiosError = error as AxiosError;
@@ -143,11 +142,10 @@ export const createPost = async (
 
 export const getUserFeed = async (userId: string): Promise<PostType[]> => {
   try {
-    console.log(`Fetching feed for user: ${userId}`);
     const response = await axios.get<PostType[]>(
       `${API_URL}/user/${userId}/feed`
     );
-    console.log(response);
+
     return response.data;
   } catch (error: any) {
     const axiosError = error as AxiosError;
@@ -161,11 +159,10 @@ export const getUserFeed = async (userId: string): Promise<PostType[]> => {
 
 export const getUserPosts = async (userId: string): Promise<PostType[]> => {
   try {
-    console.log(`Fetching posts of user: ${userId}`);
     const response = await axios.get<PostType[]>(
       `${API_URL}/user/${userId}/posts`
     );
-    console.log(response);
+
     return response.data;
   } catch (error: any) {
     const axiosError = error as AxiosError;

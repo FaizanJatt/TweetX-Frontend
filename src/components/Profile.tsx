@@ -109,7 +109,7 @@ function Profile() {
         <PostsList posts={userPosts} />
       )}
       {profileTabState === "Post" && userPosts.length === 0 && (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center text-gray-500">
           No Posts have been created by this user
         </div>
       )}

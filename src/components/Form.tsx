@@ -25,8 +25,6 @@ function Form({ type, setType }: FormProps) {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      console.log("setting token");
-      // setToken(storedToken);
       navigate("/dashboard"); // Redirect to the dashboard
     }
   }, []);
@@ -52,36 +50,34 @@ function Form({ type, setType }: FormProps) {
           email: inputForm.email,
           password: inputForm.password,
         });
-        console.log(response);
-        setInputForm((prev) => ({
-          ...prev,
-          password: "",
-          confirmPassword: "",
-          name: "",
-        }));
-        setType("Login");
+        if (response) {
+          setInputForm((prev) => ({
+            ...prev,
+            password: "",
+            confirmPassword: "",
+            name: "",
+          }));
+          setType("Login");
+        }
       } catch (error) {
         console.log(error);
       }
     } else if (type === "Login" && !emailError) {
-      console.log("trying to login", inputForm);
       try {
         const response = await loginUser({
           email: inputForm.email,
           password: inputForm.password,
         });
-        // const { token } = response;
+
         const { token, user } = response;
         console.log(user);
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
-        // setToken(token);
+
         navigate("/dashboard"); // Redirect to the dashboard
       } catch (error) {
         console.log(error);
       }
-    } else {
-      console.log("INSIDE ELES");
     }
   };
   return (
