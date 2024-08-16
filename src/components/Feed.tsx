@@ -85,12 +85,14 @@ function Feed() {
 
   return (
     <div className="flex justify-center items-center flex-col">
-      <button
-        onClick={openModal}
-        className="bg-red-400 px-6 py-2 text-sm text-white font-medium rounded-md mt-8"
-      >
-        Write
-      </button>
+      <div className="flex justify-start w-full">
+        <button
+          onClick={openModal}
+          className="bg-red-400 px-8 py-3 text-sm text-white font-medium rounded-md mt-8 "
+        >
+          Write
+        </button>
+      </div>
 
       <div className="mt-12 flex flex-col gap-y-9">
         {feedPosts.length > 0 ? (
