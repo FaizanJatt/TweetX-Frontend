@@ -1,11 +1,15 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { registerUser, loginUser } from "../api.ts";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+
 type Mode = "Login" | "Register";
 interface FormProps {
   type: Mode;
   setType: Dispatch<SetStateAction<Mode>>;
 }
+
 function isValidEmail(email: string) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
@@ -21,7 +25,10 @@ function Form({ type, setType }: FormProps) {
     confirmPassword: "",
   });
   const [emailError, setEmailError] = useState(false);
-
+  const [passwordView, setPasswordView] = useState<boolean>(false);
+  const togglePasswordView = () => {
+    setPasswordView((prev) => !prev);
+  };
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
@@ -104,13 +111,25 @@ function Form({ type, setType }: FormProps) {
             emailError ? " border-red-500 border" : "border-none"
           }`}
         ></input>
-        <input
-          placeholder="Password"
-          name="password"
-          value={inputForm.password}
-          onChange={formChangeHandler}
-          className="max-w-96 pl-4 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
-        ></input>
+        <div className="relative">
+          <input
+            placeholder="Password"
+            name="password"
+            value={inputForm.password}
+            type={passwordView ? "text" : "password"}
+            onChange={formChangeHandler}
+            className="w-full pl-4 pr-12 text-gray-600 py-3 bg-[#f7f7f7] rounded-lg"
+          />
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+            <FontAwesomeIcon
+              onClick={togglePasswordView}
+              icon={faEye}
+              opacity={0.4}
+              size="1x"
+            />
+          </div>
+        </div>
+
         {type === "Register" && (
           <input
             placeholder="Confirm Password"

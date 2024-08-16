@@ -17,12 +17,12 @@ function App() {
       <div className=" h-screen flex justify-between w-[99%]">
         <div className="ml-14 mt-8">
           <div>
-            <div className="  text-red-500 font-medium text-2xl">
+            <div className="  text-red-400 font-semibold text-3xl">
               <p>Tweetx</p>
             </div>
             <button
               onClick={modeToggleHandler}
-              className="mt-6 px-6 py-1 w-48  border-gray-300 text-gray-800 font-semibold border-s border-2 rounded-lg"
+              className="mt-10 px-6 py-1 w-48  border-gray-300 text-gray-800 font-semibold border-s border-2 rounded-lg"
             >
               <p>{mode === "Login" ? "Create Account" : "Login"}</p>
             </button>
