@@ -30,12 +30,14 @@ function Post({ data }: PostProps) {
           )}
         </div>
         <div className="ml-4 lg:min-w-96 md:w-40">
-          <div className="text-gray-500 font-semibold">{data.user.name}</div>
-          <div className="text-gray-400 text-sm">{data.content}</div>
+          <div className="text-gray-500 font-semibold mt-2">
+            {data.user.name}
+          </div>
+          <div className="text-gray-400 text-sm mt-4 pb-4">{data.content}</div>
         </div>
       </div>
-      <div className="text-gray-300 text-sm mt-1 mr-2">{relativeTime}</div>
-      <div className="w-12 h-12 absolute -right-[1.5rem] bg-red-300 rounded-full"></div>
+      <div className="text-gray-300 text-sm mt-1 mr-4">{relativeTime}</div>
+      <div className=" self-center w-12 h-12 absolute -right-[1.5rem] bg-red-400 rounded-full"></div>
     </div>
   );
 }
