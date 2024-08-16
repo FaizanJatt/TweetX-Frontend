@@ -7,7 +7,7 @@ interface PostsListProps {
 
 function PostsList({ posts }: PostsListProps) {
   return (
-    <div>
+    <div className="flex justify-center items-center flex-col">
       {posts.map((post, index) => (
         <Post key={index} data={post} />
       ))}

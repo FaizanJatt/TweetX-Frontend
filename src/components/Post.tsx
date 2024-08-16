@@ -29,7 +29,7 @@ function Post({ data }: PostProps) {
             <div className="w-full h-full bg-gray-300"></div>
           )}
         </div>
-        <div className="ml-4 min-w-96">
+        <div className="ml-4 lg:min-w-96 md:w-40">
           <div className="text-gray-500 font-semibold">{data.user.name}</div>
           <div className="text-gray-400 text-sm">{data.content}</div>
         </div>

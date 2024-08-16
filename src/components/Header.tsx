@@ -18,17 +18,19 @@ function Header({ active, setActive }: HeaderProps) {
     navigate("/");
   };
   return (
-    <div className="flex w-[80vw] ml-20 mt-4 text-xl gap-4 justify-between">
-      <p className="text-2xl text-red-400 font-semibold">Tweetx</p>
+    <div className="flex w-full  mt-4 text-xl gap-4 justify-between">
+      <p className="text-[14px] md:text-[14px] lg:text-2xl lg:ml-20  text-red-400 font-semibold">
+        Tweetx
+      </p>
       <div className="flex gap-8 ">
         {navigationOptions.map((e) => {
           return (
             <button
               key={e}
               onClick={navigationHandler}
-              className={`font-semibold ${active === e && "text-red-400"} ${
-                active !== e && "text-gray-400"
-              }`}
+              className={`text-[12px] lg:text-lg font-semibold ${
+                active === e && "text-red-400"
+              } ${active !== e && "text-gray-400"}`}
             >
               {e}
             </button>
@@ -36,7 +38,7 @@ function Header({ active, setActive }: HeaderProps) {
         })}
         <button
           onClick={logoutHandler}
-          className="flex justify-end font-semibold text-gray-400"
+          className="flex justify-center items-center  font-semibold text-gray-400 mr-5 text-[12px] lg:text-lg "
         >
           Logout
         </button>

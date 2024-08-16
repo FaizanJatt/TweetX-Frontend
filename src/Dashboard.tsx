@@ -9,14 +9,14 @@ function Dashboard() {
   const [activeState, setActiveState] = useState<NavigationType>("Feed");
 
   return (
-    <>
-      <div className="shadow-md pb-4">
+    <div className="flex flex-col justify-center items-center w-full">
+      <div className="shadow-md pb-4 w-full">
         <Header setActive={setActiveState} active={activeState} />
       </div>
       {activeState === "Feed" && <Feed />}
       {activeState === "Users" && <Users />}
       {activeState === "Profile" && <Profile />}
-    </>
+    </div>
   );
 }
 
