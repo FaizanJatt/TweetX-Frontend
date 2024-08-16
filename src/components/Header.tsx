@@ -19,20 +19,25 @@ function Header({ active, setActive }: HeaderProps) {
   };
   return (
     <div className="flex w-[80vw] ml-20 mt-4 text-xl gap-4 justify-between">
-      <p className="text-2xl text-red-500">Tweetx</p>
+      <p className="text-2xl text-red-400 font-semibold">Tweetx</p>
       <div className="flex gap-8 ">
         {navigationOptions.map((e) => {
           return (
             <button
               key={e}
               onClick={navigationHandler}
-              className={`${active === e && "text-red-500"}`}
+              className={`font-semibold ${active === e && "text-red-400"} ${
+                active !== e && "text-gray-400"
+              }`}
             >
               {e}
             </button>
           );
         })}
-        <button onClick={logoutHandler} className="flex justify-end">
+        <button
+          onClick={logoutHandler}
+          className="flex justify-end font-semibold text-gray-400"
+        >
           Logout
         </button>
       </div>
